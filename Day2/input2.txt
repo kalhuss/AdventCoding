@@ -1,0 +1,16 @@
+B Y
+A X
+C X
+A X
+B Y
+A X
+A X
+A X
+A Z
+C X
+C X
+C X
+B Y
+B X
+B Z
+B Y
