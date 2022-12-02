@@ -19,17 +19,17 @@ function readLineByLine(file: string) {
   return array;
 }
 
-function maxArray(calories: number[]) {
+function part1(calories: number[]) {
   let max = Math.max(...calories);
   console.log("The max value is: " + max);
 }
 
-function topThree(calories: number[]) {
+function part2(calories: number[]) {
   let total = 0;
   let sortedArray: number[] = calories.sort((n1, n2) => n2 - n1);
   let sum = total + sortedArray[0] + sortedArray[1] + sortedArray[2]
   console.log("The sum of the top three is: " + sum)
 }
 
-maxArray(readLineByLine(file));
-topThree(readLineByLine(file));
+part1(readLineByLine(file));
+part2(readLineByLine(file));
