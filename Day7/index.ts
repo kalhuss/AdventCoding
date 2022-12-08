@@ -2,6 +2,31 @@ import { readFileSync } from "fs";
 
 const file = readFileSync("input.txt", "utf8");
 
+function part1(file: string) {
+    const sizeDict = dirSize(file);
+    let sum = 0;
+    for (let value of Object.values(sizeDict)) {
+        if (value < 100000) {
+            sum += value;
+        }
+    }
+    console.log(sum);
+}
+
+function part2(file: string) {
+    const totalSize = dirSize(file)[""];
+    const max = 70000000 - 30000000;
+    const spaceNeeded = totalSize - max;
+    let minVal = Number.MAX_SAFE_INTEGER;
+
+    for (let value of Object.values(dirSize(file))) {
+        if (value >= spaceNeeded) {
+            minVal = Math.min(minVal, value);
+        }
+    }
+    console.log(minVal);
+}
+
 function dirSize(file: string) {
     let lines = file.split("\n");
     let path: string[] = [];
@@ -30,31 +55,6 @@ function dirSize(file: string) {
         }
     }
     return sizeDict;
-}
-
-function part1(file: string) {
-    const sizeDict = dirSize(file);
-    let sum = 0;
-    for (let value of Object.values(sizeDict)) {
-        if (value < 100000) {
-            sum += value;
-        }
-    }
-    console.log(sum);
-}
-
-function part2(file: string) {
-    const totalSize = dirSize(file)[""];
-    const max = 70000000 - 30000000;
-    const spaceNeeded = totalSize - max;
-    let minVal = Number.MAX_SAFE_INTEGER;
-
-    for (let value of Object.values(dirSize(file))) {
-        if (value >= spaceNeeded) {
-            minVal = Math.min(minVal, value);
-        }
-    }
-    console.log(minVal);
 }
 
 part1(file);
