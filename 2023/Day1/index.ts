@@ -49,7 +49,6 @@ function part2(file: string) {
                 if (currentLine.includes(number[k][0])) {
                     currentNumber += number[k][1];
                     currentLine = currentLine.slice(-1);
-                    
                 }
             }
             if (!isNaN(parseInt(lines[i].charAt(j)))) {
